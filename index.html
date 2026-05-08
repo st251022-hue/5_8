@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高校化学：電気分解をマスターしよう！</title>
+    <style>
+        /* 全体のスタイル */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        /* 見出しのスタイル */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+        }
+
+        /* 陽極・陰極のボックススタイル（視覚的区別） */
+        .box {
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .cathode-box {
+            background-color: #e3f2fd; /* 薄い青 */
+            border: 1px solid #90caf9;
+        }
+        .anode-box {
+            background-color: #ffebee; /* 薄い赤 */
+            border: 1px solid #ef9a9a;
+        }
+
+        /* 反応式のスタイル */
+        .reaction {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #282c34;
+            color: #abb2bf;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            margin: 10px 0;
+        }
+
+        /* フローチャート風リスト */
+        ol.flow {
+            list-style-type: none;
+            counter-reset: step-counter;
+            padding-left: 0;
+        }
+        ol.flow > li {
+            position: relative;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            background: #fff;
+            padding: 15px 15px 15px 50px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        ol.flow > li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-weight: bold;
+        }
+        .cathode-box ol.flow > li::before { background-color: #1976d2; }
+        .anode-box ol.flow > li::before { background-color: #d32f2f; }
+
+        /* テーブル */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>電気分解の基礎マスター</h1>
+    
+    <p>電気分解は、外部から電気エネルギーを与えることで、自発的には起こらない<strong>酸化還元反応</strong>を強制的に起こす操作です。<br>
+    どの電極で何が発生するかは、<strong>「優先順位のルール」</strong>を上から順番に確認するだけで簡単に判別できます。</p>
+
+    <h2>1. 陰極（－極）の反応ルール</h2>
+    <p>陰極では、電子（e<sup>-</sup>）を受け取る<strong>還元反応</strong>が起こります。<br>
+    水溶液中の陽イオン（＋イオン）に注目し、以下の順番でチェックします。</p>
+
+    <div class="box cathode-box">
+        <h3 style="color: #1976d2;">🔵 陰極のチェックフロー</h3>
+        <ol class="flow">
+            <li><strong>イオン化傾向の小さい金属イオン（Ag<sup>+</sup>, Cu<sup>2+</sup>など）はあるか？</strong><br>
+                → YES：その金属が単体として析出する。<br>
+                <div class="reaction">Cu<sup>2+</sup> + 2e<sup>-</sup> &rarr; Cu</div>
+            </li>
+            <li><strong>（上記がない場合）水溶液か？</strong><br>
+                → H<sup>+</sup> または 水（H<sub>2</sub>O）が電子を受け取り、<strong>水素（H<sub>2</sub>）</strong>が発生する。<br>
+                <div class="reaction">2H<sub>2</sub>O + 2e<sup>-</sup> &rarr; H<sub>2</sub> + 2OH<sup>-</sup></div>
+            </li>
+        </ol>
+        <p><small>※Na<sup>+</sup>やK<sup>+</sup>などのイオン化傾向が大きい金属イオンは、水溶液中では析出しません（水の方が先に還元されるため）。</small></p>
+    </div>
+
+    <h2>2. 陽極（＋極）の反応ルール</h2>
+    <p>陽極では、電子（e<sup>-</sup>）を奪われる<strong>酸化反応</strong>が起こります。<br>
+    ここでは「電極の種類」と「陰イオン（－イオン）」に注目します。</p>
+
+    <div class="box anode-box">
+        <h3 style="color: #d32f2f;">🔴 陽極のチェックフロー</h3>
+        <ol class="flow">
+            <li><strong>電極が「Pt（白金）」「C（炭素）」<span class="highlight">以外</span>の金属（Cu, Agなど）か？</strong><br>
+                → YES：電極そのものが溶ける。<br>
+                <div class="reaction">Cu &rarr; Cu<sup>2+</sup> + 2e<sup>-</sup></div>
+            </li>
+            <li><strong>（電極がPtかCの場合）ハロゲン化物イオン（Cl<sup>-</sup>, I<sup>-</sup>など）はあるか？</strong><br>
+                → YES：ハロゲンの単体（Cl<sub>2</sub>, I<sub>2</sub>など）が発生する。<br>
+                <div class="reaction">2Cl<sup>-</sup> &rarr; Cl<sub>2</sub> + 2e<sup>-</sup></div>
+            </li>
+            <li><strong>（上記がない場合）水溶液か？</strong><br>
+                → OH<sup>-</sup> または 水（H<sub>2</sub>O）が電子を失い、<strong>酸素（O<sub>2</sub>）</strong>が発生する。<br>
+                <div class="reaction">2H<sub>2</sub>O &rarr; O<sub>2</sub> + 4H<sup>+</sup> + 4e<sup>-</sup></div>
+            </li>
+        </ol>
+        <p><small>※SO<sub>4</sub><sup>2-</sup> や NO<sub>3</sub><sup>-</sup> のような多原子イオンは、非常に酸化されにくいため変化しません。</small></p>
+    </div>
+
+    <h2>3. 代表的な電気分解の例</h2>
+    <table>
+        <tr>
+            <th>水溶液</th>
+            <th>電極 (陽/陰)</th>
+            <th>陽極(＋)の生成物</th>
+            <th>陰極(－)の生成物</th>
+        </tr>
+        <tr>
+            <td>塩化銅(II)水溶液 (CuCl<sub>2</sub>)</td>
+            <td>C / C</td>
+            <td>塩素 (Cl<sub>2</sub>)</td>
+            <td>銅 (Cu)</td>
+        </tr>
+        <tr>
+            <td>塩化ナトリウム水溶液 (NaCl)</td>
+            <td>C / C</td>
+            <td>塩素 (Cl<sub>2</sub>)</td>
+            <td>水素 (H<sub>2</sub>)</td>
+        </tr>
+        <tr>
+            <td>水酸化ナトリウム水溶液 (NaOH)</td>
+            <td>Pt / Pt</td>
+            <td>酸素 (O<sub>2</sub>)</td>
+            <td>水素 (H<sub>2</sub>)</td>
+        </tr>
+        <tr>
+            <td>硫酸銅(II)水溶液 (CuSO<sub>4</sub>)</td>
+            <td><strong>Cu</strong> / Pt</td>
+            <td><strong>銅イオン (Cu<sup>2+</sup>) 電極溶解</strong></td>
+            <td>銅 (Cu)</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
